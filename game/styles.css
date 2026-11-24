@@ -1,0 +1,87 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#1a0f1e;font-family:Arial,Helvetica,sans-serif;color:#f5e9c8}
+#app,#app canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#vignette{position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at 50% 42%,transparent 55%,rgba(120,40,60,.28) 82%,rgba(40,10,40,.55) 100%)}
+#hud{position:absolute;inset:0;pointer-events:none;z-index:3}
+.pnl{position:absolute;background:rgba(12,8,18,.78);border:1px solid #c9a227;border-radius:10px;padding:8px 12px;box-shadow:0 2px 14px rgba(0,0,0,.5)}
+.pnlHead{color:#e8c34a;font-size:11px;letter-spacing:2px;margin-bottom:6px}
+#mission{top:16px;left:12px;max-width:300px}
+#jobTitle{color:#ffd75e;font-weight:700;font-size:13px;letter-spacing:1px}
+#jobNext{font-size:13px;margin-top:3px}
+#jobSub{font-size:12px;color:#cbb98a;margin-top:2px}
+#notices{position:absolute;top:120px;left:12px;display:flex;flex-direction:column;gap:6px}
+.toast{background:rgba(12,8,18,.8);border:1px solid #c9a227;border-radius:8px;padding:6px 10px;font-size:12px;max-width:320px}
+#dispatch{top:12px;left:50%;transform:translateX(-50%);min-width:280px;text-align:left}
+#dispatchHead{color:#ffd75e;font-size:12px;letter-spacing:1px;font-weight:700}
+.dunit{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:2px 0}
+.dunit .chip{background:#7a5c00;color:#ffe9a8;border-radius:4px;padding:0 6px;font-size:10px;font-weight:700}
+#moneyWrap{top:12px;right:12px;text-align:right;min-width:190px}
+#money{color:#5ee07a;font-size:22px;font-weight:700}
+#stars{color:#ffd75e;font-size:15px;letter-spacing:3px}
+#rankLine{font-size:12px;color:#e8c34a}
+#clock{font-size:11px;color:#cbb98a}
+#weapons{top:150px;right:12px;width:200px}
+.wslot{display:flex;justify-content:space-between;font-size:12px;padding:3px 4px;border-radius:5px;color:#d8cba8}
+.wslot.sel{background:rgba(201,162,39,.25);color:#fff;font-weight:700}
+.wslot .ammo{color:#ffd75e}
+#crew{top:300px;right:12px;width:200px}
+.crewCard{font-size:11px;padding:5px 6px;border:1px solid #6b5a1e;border-radius:6px;margin-bottom:5px;line-height:1.35}
+.crewCard b{color:#ffd75e}
+.crewCard span{color:#cbb98a}
+#minimapWrap{position:absolute;left:12px;bottom:12px}
+#minimap{border:2px solid #c9a227;border-radius:50%;background:#101826;display:block}
+#vitals{margin-top:6px;width:250px}
+.vrow{display:flex;align-items:center;gap:8px;font-size:10px;color:#e8c34a;margin-top:3px}
+.vbar{flex:1;height:8px;background:#222;border-radius:4px;overflow:hidden}
+#hpBar{height:100%;width:100%;background:linear-gradient(90deg,#ff7a5c,#ffb35c)}
+#armBar{height:100%;width:60%;background:linear-gradient(90deg,#5cb8ff,#8fd8ff)}
+#objective{font-size:12px;color:#ffd75e;margin-top:4px;text-shadow:0 1px 3px #000}
+#district{right:12px;bottom:168px;text-align:right;min-width:170px}
+#districtName{font-size:20px;font-weight:700;color:#fff;letter-spacing:1px}
+#districtStreet{font-size:11px;color:#e8c34a;letter-spacing:2px}
+#speedo{right:12px;bottom:64px;text-align:right;min-width:170px}
+#carName{font-size:11px;color:#cbb98a;letter-spacing:2px}
+#speedNum{font-size:34px;font-weight:700;color:#fff;line-height:1}
+#speedUnit{font-size:11px;color:#e8c34a}
+#condLabel{font-size:10px;color:#cbb98a;margin-top:4px}
+#condBar{height:7px;background:#222;border-radius:4px;overflow:hidden;margin-top:2px}
+#condFill{height:100%;width:97%;background:linear-gradient(90deg,#5ee07a,#b8ff5c)}
+#radio{right:12px;bottom:12px;font-size:12px;color:#ffd75e}
+#radioIco{margin-right:6px}
+#dialogue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:none;width:640px;max-width:86vw;background:rgba(12,8,18,.85);border:1px solid #c9a227;border-radius:10px;padding:10px 14px;align-items:center;gap:12px}
+#dialogue.on{display:flex}
+#dlgPortrait{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#c96a2b,#8a3a5c);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#fff;flex:none}
+#dlgName{color:#ffd75e;font-weight:700;font-size:14px}
+#dlgText{font-size:14px;line-height:1.4}
+#hint{position:absolute;left:50%;bottom:150px;transform:translateX(-50%);font-size:11px;color:#d8cba8;text-shadow:0 1px 3px #000;white-space:nowrap}
+#banner{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-size:34px;font-weight:700;color:#fff;text-shadow:0 2px 12px #000;display:none;letter-spacing:2px}
+.screen{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(180deg,rgba(20,8,30,.25),rgba(20,8,30,.55));text-align:center}
+.screen.hidden{display:none}
+#title h1{font-size:84px;letter-spacing:6px;color:#ffd75e;text-shadow:0 0 34px rgba(255,150,60,.75),0 4px 0 #7a2a00;font-weight:900}
+#tagline{font-size:17px;color:#ffe9c8;text-shadow:0 1px 6px #000}
+.screen button{pointer-events:auto;cursor:pointer;background:rgba(12,8,18,.8);border:1px solid #c9a227;color:#ffd75e;border-radius:10px;padding:12px 34px;font-size:15px;letter-spacing:2px;font-weight:700}
+.screen button:hover{background:rgba(201,162,39,.3)}
+#slots{color:#e8c34a;font-size:13px;letter-spacing:2px}
+#titleControls{font-size:12px;color:#d8cba8;margin-top:26px}
+#pause{background:rgba(10,6,16,.82);justify-content:flex-start;padding-top:30px}
+#pauseInner{display:flex;gap:34px;max-width:1200px;width:94vw}
+#pauseLeft,#pauseRight{flex:1}
+#pause h2{color:#ffd75e;letter-spacing:2px;font-size:22px;margin-bottom:10px}
+#pauseMap{width:100%;border:1px solid #c9a227;border-radius:8px;background:#101826}
+#pauseDistricts{margin-top:8px;font-size:11px;color:#cbb98a;letter-spacing:1px}
+#statRows,#standingRows{font-size:13px}
+.srow{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(201,162,39,.18)}
+.srow b{color:#fff}
+#pause h3{color:#ffd75e;margin:14px 0 6px;letter-spacing:2px;font-size:14px}
+#pauseRight button{display:block;width:100%;margin-top:8px}
+#pauseHint{font-size:11px;color:#cbb98a;margin-top:12px;text-align:center}
+.hidden{display:none!important}
+#mission-list{z-index:6}
+#mission-list h2{color:#ffd75e;letter-spacing:3px;font-size:24px;margin-bottom:6px}
+#mission-items{display:flex;flex-direction:column;gap:10px;width:560px;max-width:92vw;max-height:70vh;overflow:auto}
+.mission-btn{pointer-events:auto;cursor:pointer;background:rgba(12,8,18,.85);border:1px solid #c9a227;color:#f5e9c8;border-radius:10px;padding:12px 16px;font-size:13px;text-align:left;display:flex;flex-direction:column;gap:3px}
+.mission-btn b{color:#ffd75e;font-size:15px;letter-spacing:1px}
+.mission-btn span{color:#d8cba8}
+.mission-btn i{color:#e8c34a;font-style:normal;font-size:12px}
+.mission-btn:hover{background:rgba(201,162,39,.3)}
+.mission-btn.close{align-items:center}

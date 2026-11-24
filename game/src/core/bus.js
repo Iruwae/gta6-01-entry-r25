@@ -1,0 +1,1 @@
+export function createBus(){const m=new Map();return{on(e,f){(m.get(e)||m.set(e,[]).get(e)).push(f)},once(e,f){const w=d=>{this.off(e,w);f(d)};this.on(e,w)},emit(e,d){(m.get(e)||[]).forEach(f=>f(d))},off(e,f){const a=m.get(e);if(a){const i=a.indexOf(f);if(i>=0)a.splice(i,1)}}}}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TELUK SENJA</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="vignette"></div>
+<div id="hud">
+  <div id="mission" class="pnl"><div id="jobTitle">MISI 1/8 · KETEMU SARI</div><div id="jobNext">Pergi ke Toko Sari</div><div id="jobSub">▸ Temui Sari di toko</div></div>
+  <div id="notices"></div>
+  <div id="dispatch" class="pnl"><div id="dispatchHead">UNIT MENANGGAPI · <span id="dispatchCount">0</span></div><div id="dispatchUnits"></div></div>
+  <div id="moneyWrap" class="pnl"><div id="money">Rp 150.000</div><div id="stars">☆☆☆☆☆</div><div id="rankLine"><span id="rankName">ANAK BARU</span> · <span id="rankXp">0 RP</span></div><div id="clock">17:26</div></div>
+  <div id="weapons" class="pnl"><div class="pnlHead">SENJATA</div><div id="weaponSlots"></div></div>
+  <div id="crew" class="pnl"><div class="pnlHead">KRU</div><div id="crewCards"></div></div>
+  <div id="minimapWrap"><canvas id="minimap" width="250" height="250"></canvas><div id="vitals"><div class="vrow"><span>KESEHATAN</span><div class="vbar"><div id="hpBar"></div></div></div><div class="vrow"><span>PELINDUNG</span><div class="vbar"><div id="armBar"></div></div></div></div><div id="objective">★ Objective · 232 m</div></div>
+  <div id="district" class="pnl"><div id="districtName">PANTAI MERPATI</div><div id="districtStreet">JL. MERPATI</div></div>
+  <div id="speedo" class="pnl"><div id="carName">GARUDA GT</div><div id="speedNum">0</div><div id="speedUnit">KM/H</div><div id="condLabel">KONDISI</div><div id="condBar"><div id="condFill"></div></div></div>
+  <div id="radio" class="pnl"><span id="radioIco">♪</span><span id="radioLine">SENJA 97.5 — Senja di Teluk — Orkes Melati</span></div>
+  <div id="dialogue"><div id="dlgPortrait">R</div><div id="dlgBody"><div id="dlgName">Ratna</div><div id="dlgText"></div></div></div>
+  <div id="hint">WASD jalan / mengemudi · E masuk-keluar mobil · Spasi rem tangan · F bidik · Klik kiri tembak · M misi · R balap · T taksi · Esc jeda</div>
+  <div id="banner"></div>
+</div>
+<div id="title" class="screen">
+  <h1>TELUK SENJA</h1>
+  <p id="tagline">Kota pesisir yang tak pernah tidur. Bawa pulang senja.</p>
+  <button id="btnNew">PERMAINAN BARU</button>
+  <button id="btnContinue">LANJUTKAN</button>
+  <div id="slots">SLOT 1 · SLOT 2 · SLOT 3</div>
+  <div id="titleControls">WASD jalan / mengemudi · E masuk-keluar mobil · Spasi rem tangan · F bidik · Klik kiri tembak · M misi · R balap · T taksi · Esc jeda</div>
+</div>
+<div id="pause" class="screen hidden">
+  <div id="pauseInner">
+    <div id="pauseLeft"><h2>PETA TELUK SENJA</h2><canvas id="pauseMap" width="640" height="420"></canvas><div id="pauseDistricts"></div></div>
+    <div id="pauseRight"><h2>STATISTIK</h2><div id="statRows"></div><h3>BERDIRI DI DISTRIK</h3><div id="standingRows"></div>
+      <button id="btnResume">LANJUTKAN</button><button id="btnSave">SIMPAN</button><button id="btnShop">BENGKEL &amp; TOKO</button><button id="btnQuit">KELUAR KE JUDUL</button>
+      <div id="pauseHint">ESC untuk lanjut</div></div>
+  </div>
+</div>
+<div id="mission-list" class="screen hidden">
+  <h2>PILIH MISI</h2>
+  <div id="mission-items"></div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
